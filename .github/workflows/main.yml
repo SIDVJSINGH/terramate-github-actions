@@ -30,18 +30,21 @@ jobs:
       - name: Terramate Generate
         run: terramate generate
 
+      - name: Present directory
+        run: export DIRECTORY=$(pwd)
+
       - name: Terraform Init
-        working-directory: cd S3
+        working-directory: cd $DIRECTORY/S3
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: cd S3
+        working-directory: cd $DIRECTORY/S3
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: cd S3
+        working-directory: cd $DIRECTORY/S3
         run: terraform apply -auto-approve
 
       - name: Terraform Destroy
-        working-directory: cd S3
+        working-directory: cd $DIRECTORY/S3
         run: terraform destroy -auto-approve
