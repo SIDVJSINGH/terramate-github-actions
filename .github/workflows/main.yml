@@ -31,11 +31,11 @@ jobs:
         run: terramate generate
 
       - name: Terraform Init
-        working-directory: .
+        working-directory: cd S3
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: .
+        working-directory: cd S3
         run: terraform plan
 
       - name: Terraform Apply
