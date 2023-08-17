@@ -31,13 +31,17 @@ jobs:
         run: terramate generate
 
       - name: Terraform Init
+        working-directory: cd S3/
         run: terraform init
 
-      # - name: Terraform Plan
-      #   run: terraform plan
+      - name: Terraform Plan
+        working-directory: cd S3/
+        run: terraform plan
 
       - name: Terraform Apply
+        working-directory: cd S3/
         run: terraform apply -auto-approve
 
       - name: Terraform Destroy
+        working-directory: cd S3/
         run: terraform destroy -auto-approve
