@@ -16,15 +16,15 @@ jobs:
       # - name: Terramate
       #   uses: asdf-vm/actions/install@83133f03f5693901c2296a8e622955087dc20267
 
-      - name: Terramate Generate
-        run: terramate generate
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
+
+      - name: Terramate Generate
+        run: terramate generate
 
       - name: Terraform Init
         run: terraform init
