@@ -13,8 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Terramate
-        uses: asdf-vm/actions/install@83133f03f5693901c2296a8e622955087dc20267
+      # - name: Terramate
+      #   uses: asdf-vm/actions/install@83133f03f5693901c2296a8e622955087dc20267
 
       - name: Terramate Generate
         run: terramate generate
