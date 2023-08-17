@@ -6,7 +6,7 @@ stack {
 
 globals {
   aws_provider_version = "4.27.0"
-  region     = "ap-northeast-1"
+  aws_region     = "ap-northeast-1"
 }
 
 generate_hcl "provider.tf" {
