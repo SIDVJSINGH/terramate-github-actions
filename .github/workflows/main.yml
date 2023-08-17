@@ -36,13 +36,13 @@ jobs:
         run: terramate generate
 
       - name: Development
-        working-directory: Development
+        working-directory: S3/Development
         run: terraform init & terraform apply -auto-approve & terraform destroy -auto-approve
 
       - name: Production
         working-directory: S3/Production
-        run: terraform init |terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform init & terraform apply -auto-approve & terraform destroy -auto-approve
 
       - name: Staging
         working-directory: S3/Staging
-        run: terraform init | terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform init & terraform apply -auto-approve & terraform destroy -auto-approve
