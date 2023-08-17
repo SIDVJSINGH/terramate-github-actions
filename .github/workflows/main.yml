@@ -39,9 +39,9 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: .
+        working-directory: cd S3
         run: terraform apply -auto-approve
 
       - name: Terraform Destroy
-        working-directory: .
+        working-directory: cd S3
         run: terraform destroy -auto-approve
