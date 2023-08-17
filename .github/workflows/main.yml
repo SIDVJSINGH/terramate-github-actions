@@ -29,9 +29,7 @@ jobs:
 
       - name: Terramate Stacks
         working-directory: S3
-        run: terramate create Development \
-          terramate create Production \
-          terramate create Staging
+        run: terramate create Development | terramate create Production | terramate create Staging
 
       - name: Terramate Generate
         working-directory: S3
@@ -39,18 +37,12 @@ jobs:
 
       - name: Development
         working-directory: S3\Development
-        run: terraform init \
-          terraform apply -auto-approve \
-          terraform destroy -auto-approve
+        run: terraform init | terraform apply -auto-approve | terraform destroy -auto-approve
 
       - name: Production
         working-directory: S3\Production
-        run: terraform init \
-          terraform apply -auto-approve \
-          terraform destroy -auto-approve
+        run: terraform init |terraform apply -auto-approve | terraform destroy -auto-approve
 
       - name: Staging
         working-directory: S3\Staging
-        run: terraform init \
-          terraform apply -auto-approve \
-          terraform destroy -auto-approve
+        run: terraform init | terraform apply -auto-approve | terraform destroy -auto-approve
