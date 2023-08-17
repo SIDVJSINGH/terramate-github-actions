@@ -34,17 +34,17 @@ jobs:
         run: export DIRECTORY=$(pwd)
 
       - name: Terraform Init
-        working-directory: cd $DIRECTORY/S3
+        working-directory: $DIRECTORY/S3
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: cd $DIRECTORY/S3
+        working-directory: $DIRECTORY/S3
         run: terraform plan
 
       - name: Terraform Apply
-        working-directory: cd $DIRECTORY/S3
+        working-directory: $DIRECTORY/S3
         run: terraform apply -auto-approve
 
       - name: Terraform Destroy
-        working-directory: cd $DIRECTORY/S3
+        working-directory: $DIRECTORY/S3
         run: terraform destroy -auto-approve
