@@ -21,8 +21,6 @@ generate_hcl "provider.tf" {
     }
     provider "aws" {
       region     = global.aws_region
-      access_key = global.aws_access_key
-      secret_key = global.aws_secret_key
     }
   }
 }
