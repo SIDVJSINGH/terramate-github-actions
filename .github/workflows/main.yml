@@ -41,7 +41,7 @@ jobs:
 
       - name: Development-apply
         working-directory: S3/Development
-        run: terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform apply -auto-approve -lock=false
 
       - name: Production
         working-directory: S3/Production
@@ -49,7 +49,7 @@ jobs:
 
       - name: Production-apply
         working-directory: S3/Production
-        run: terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform apply -auto-approve -lock=false
 
       - name: Staging
         working-directory: S3/Staging
@@ -57,4 +57,4 @@ jobs:
 
       - name: Staging-apply
         working-directory: S3/Staging
-        run: terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform apply -auto-approve -lock=false
