@@ -37,12 +37,24 @@ jobs:
 
       - name: Development
         working-directory: S3/Development
-        run: terraform init | terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform init
+
+      - name: Development-apply
+        working-directory: S3/Development
+        run: terraform apply -auto-approve | terraform destroy -auto-approve
 
       - name: Production
         working-directory: S3/Production
-        run: terraform init | terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform init
+
+      - name: Production-apply
+        working-directory: S3/Production
+        run: terraform apply -auto-approve | terraform destroy -auto-approve
 
       - name: Staging
         working-directory: S3/Staging
-        run: terraform init | terraform apply -auto-approve | terraform destroy -auto-approve
+        run: terraform init
+
+      - name: Staging-apply
+        working-directory: S3/Staging
+        run: terraform apply -auto-approve | terraform destroy -auto-approve
