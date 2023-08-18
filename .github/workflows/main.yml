@@ -27,34 +27,27 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
 
-      # - name: Terramate Stacks
-      #   working-directory: S3
-      #   run: terramate create Development | terramate create Production | terramate create Staging
-
       - name: Terramate Generate
         working-directory: S3
         run: terramate generate
 
       - name: Development
         working-directory: S3/Development
-        run: terraform init -lock=false
-
-      - name: Development-apply
-        working-directory: S3/Development
-        run: terraform apply -auto-approve -lock=false
+        run: |
+          terraform init -lock=false
+          terraform apply -auto-approve -lock=false
+          terraform destroy -auto-approve -lock=false
 
       - name: Production
         working-directory: S3/Production
-        run: terraform init -lock=false
-
-      - name: Production-apply
-        working-directory: S3/Production
-        run: terraform apply -auto-approve -lock=false
+        run: |
+          terraform init -lock=false
+          terraform apply -auto-approve -lock=false
+          terraform destroy -auto-approve -lock=false
 
       - name: Staging
         working-directory: S3/Staging
-        run: terraform init -lock=false
-
-      - name: Staging-apply
-        working-directory: S3/Staging
-        run: terraform apply -auto-approve -lock=false
+        run: |
+          terraform init -lock=false
+          terraform apply -auto-approve -lock=false
+          terraform destroy -auto-approve -lock=false
