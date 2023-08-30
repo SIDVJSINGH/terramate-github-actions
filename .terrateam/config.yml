@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-=======
-access_control:
-  enabled: true
->>>>>>> 657358e82af51bf53025dd43cefca52c26aa2c1c
-enabled: true
-automerge:
-  enabled: true
-  delete_branch: true
