@@ -29,6 +29,7 @@ generate_hcl "main.tf" {
   content {
     resource "aws_s3_bucket" "infraSity" {
       acl = "private"
+      bucket = "Sid"
       versioning {
         enabled = true
       }
