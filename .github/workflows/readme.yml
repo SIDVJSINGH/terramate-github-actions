@@ -1,0 +1,25 @@
+name: Update README on Successful Pipeline Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update README
+        run: echo "The pipeline was successful!" >> README.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "SIDVJSINGH"
+          git config --global user.email "sidvjsingh@gmail.com"
+          git add README.md
+          git commit -m "Update README"
+          git push
