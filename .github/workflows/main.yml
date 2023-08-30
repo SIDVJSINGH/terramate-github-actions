@@ -32,21 +32,7 @@ jobs:
         run: terramate generate
 
       - name: Development
-        working-directory: S3/Development
-        run: |
-          terraform init -lock=false
-          terraform apply -auto-approve -lock=false
-          terraform destroy -auto-approve -lock=false
-
-      - name: Production
-        working-directory: S3/Production
-        run: |
-          terraform init -lock=false
-          terraform apply -auto-approve -lock=false
-          terraform destroy -auto-approve -lock=false
-
-      - name: Staging
-        working-directory: S3/Staging
+        working-directory: S3
         run: |
           terraform init -lock=false
           terraform apply -auto-approve -lock=false
