@@ -1,5 +1,3 @@
-access_control:
-  enabled: true
 enabled: true
 automerge:
   enabled: true
