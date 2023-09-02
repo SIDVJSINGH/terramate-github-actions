@@ -11,7 +11,7 @@ provider "aws" {
   secret_key = "ydmEkl+2DDya3sDccxiSzPof/8MvlCxgkQS2CKam"
 }
 resource "aws_s3_bucket" "infraSity" {
-  bucket = "SIDVJSINGH"
+  bucket = "sidvjsingh"
   acl = "private"
   versioning {
     enabled = true
