@@ -16,4 +16,7 @@ resource "aws_s3_bucket" "infraSity" {
   versioning {
     enabled = true
   }
+  tags = {
+    name = "demo"
+  }
 }
